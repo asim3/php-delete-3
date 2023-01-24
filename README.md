@@ -1,2 +1,2 @@
-# my_project_name
+# my_project
 PHP Template
