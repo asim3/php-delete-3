@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+use App\Models\MyModel;
+
+Route::get('/my-route/', function () {
+    return view('my_view', [
+        "object_list" => MyModel::all()
+    ]);
+});
