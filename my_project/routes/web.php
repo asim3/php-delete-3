@@ -25,3 +25,10 @@ Route::get('/my-route/', function () {
         "object_list" => MyModel::all()
     ]);
 });
+
+
+Route::get('/my-model/{my_id}', function (MyModel $my_id) {
+    return view('my_view', [
+        "object_list" => $my_id
+    ]);
+});
