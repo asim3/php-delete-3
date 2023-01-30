@@ -17,7 +17,14 @@ class MyModelFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "first_name" => $this->faker->sentence(),
+            "last_name" => $this->faker->sentence(),
+            "description" => $this->faker->paragraph(5),
+            // "first_name" => $this->faker->company(),
+            // "first_name" => $this->faker->companyEmail(),
+            // "first_name" => $this->faker->url(),
+            // "first_name" => $this->faker->city(),
+            // "first_name" => "tag_1, tag_2, tag_3",
         ];
     }
 }
