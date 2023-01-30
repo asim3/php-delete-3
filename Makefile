@@ -28,7 +28,11 @@ new:
 
 
 seed:
-	${CD} php artisan db:seed 
+	${CD} php artisan db:seed
+
+
+refresh:
+	${CD} php artisan migrate:refresh --seed
 
 
 run:
