@@ -32,3 +32,21 @@ Route::get('/my-model/{my_id}', function (MyModel $my_id) {
         "object_list" => $my_id
     ]);
 });
+
+use App\Http\Controllers\MyModelController;
+
+Route::get('/my-homepage', [MyModelController::class, "my_homepage_view"]);
+
+# ==============
+
+Route::get('/my-name-filter', function () {
+    return view('my_view', [
+        "object_list" => MyModel::latest()->MyNameFilter("similique")->get()
+    ]);
+});
+
+Route::get('/my-filter', function () {
+    return view('my_view', [
+        "object_list" => MyModel::latest()->MyFilter(request(["s_name", "search_value"]))->get()
+    ]);
+});
